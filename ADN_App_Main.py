@@ -124,7 +124,7 @@ def Datos(texto):
 def ayuda():
     print("Ver. 1.0.0"
           "trans(Codigo) -> Si el valor introducido es ADN lo transforma a ARNm y viceversa"
-          "dividirEnTres(Codigo) -> Divide en bloques un codigo de ADN o ARNm."
+          "dividirEnTres(Codigo) -> Divide en bloques un codigo de ADN o ARNm. Devuelve una lista."
           "encontrarProt(Codigo) -> Encuentra UNA proteina de un bloque de codigo (se convierte"
           "                         a ARNm de forma automatica)."
           "proteinList(Codigo) -> Transforma una tira de ADN (o varios ARNm en una sola tira) en"
