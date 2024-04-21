@@ -10,7 +10,7 @@ def corregir(texto):
         texto2.pop(texto.find(" "))
         texto = ''.join(texto2)
 
-    return texto
+    return texto.upper()
 
 def trans(texto):
 
@@ -41,10 +41,11 @@ def dividirEnTres(texto):
 
 def encontrarProt(texto):
 
-    ARN_List = dividirEnTres(tipo(texto, "ARNm"))
+    ARN_texto = dividirEnTres(tipo(texto, "ARNm"))
+    ARN_texto = ARN_texto[0]
 
     for i in range(len(protRS)):
-        if texto in protCD[i]:
+        if ARN_texto in protCD[i]:
             return protRS[i]
             break
 
@@ -66,18 +67,18 @@ def tipo(texto, darTipo="tipo"):
 
     texto = corregir(texto)
 
-    if texto.find("T") != -1 and texto.find("U") == -1:
+    if texto.find("U") != -1 and texto.find("T") == -1:
         if darTipo == "tipo":
-            return "ADN"
-        elif darTipo == "ARNm":
+            return "ARNm"
+        elif darTipo == "ADN":
             return trans(texto)
         else:
             return texto
 
-    elif texto.find("U") != -1 and texto.find("T") == -1:
+    elif texto.find("U"):
         if darTipo == "tipo":
-            return "ARNm"
-        elif darTipo == "ADN":
+            return "ADN"
+        elif darTipo == "ARNm":
             return trans(texto)
         else:
             return texto
@@ -114,9 +115,11 @@ def Datos(texto):
     print("Tipo:", tipo(texto))
     print("---------------------------------------------")
     print("ADN: ", tipo(texto, "ADN"))
-    print("ARNn:", tipo(texto, "ARNm"))
+    print("ARNm:", tipo(texto, "ARNm"))
     print("---------------------------------------------")
     print("\nProteinas correspondientes:", proteinList(texto))
+    print("\n///////////////////////////////////////////\n")
+    return ""
 
 def ayuda():
     print("Ver. 1.0.0"
@@ -124,11 +127,12 @@ def ayuda():
           "dividirEnTres(Codigo) -> Divide en bloques un codigo de ADN o ARNm."
           "encontrarProt(Codigo) -> Encuentra UNA proteina de un bloque de codigo (se convierte"
           "                         a ARNm de forma automatica)."
-          "proteinList(Codigo) -> Transforma una tira de ADN (o varios ARNm) en todas las proteinas"
-          "                       que contiene esa informacion."
+          "proteinList(Codigo) -> Transforma una tira de ADN (o varios ARNm en una sola tira) en"
+          "                       todas las proteinas que contiene esa informacion."
           "tipo(Codigo, tipo[opcional]) -> Comprueba si el valor introducido es ADN o ARNm"
           "                                En caso de tener una segunda entrada traduce el codigo"
-          "                                en un tipo especifico."
+          "                                en un tipo especifico indicado por la segunda entrada."
+          "                                Si no se puede determinar el tipo, devolvera ADN por defecto."
           "encontrarCodigo(Proteina) -> Indica el/los codigo(s) necesario(s) para obtener una proteina"
           "                             especifica (ARNm)."
           "codigoList(Proteinas, tipo[opcional]) -> Hace una lista del ADN necesario para obtener unas"
@@ -136,7 +140,7 @@ def ayuda():
           "                                         El tipo (opcional), por defecto es ADN, aunque se"
           "                                         puede seleccionar ARNm. En caso de ser ARNm, el"
           "                                         resultado viene separado por espacios."
-          "Datos(Codigo) -> indica todos los datos de el Codigo.")
+          "Datos(Codigo) -> indica todos los datos de el codigo en la terminal")
 
 def help():
     ayuda()
