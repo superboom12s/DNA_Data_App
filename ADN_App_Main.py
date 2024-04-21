@@ -1,5 +1,5 @@
 
-protCD = [["UUU", "UUC"], ["UUA", "UUG"], ["UCU", "UCC", "UCA", "UCG"], ["UAU", "UAC"], ["UAA", "UAG"], ["UGU", "UGC"], ["UGA"], ["UGG"], ["CUU", "CUC", "CUA", "CUG"], ["CCU", "CCC", "CCA", "CCG"], ["CAU", "CAC"], ["CAA", "CAG"], ["CGU", "CGC", "CGA", "CGG"], ["AUU", "AUC", "AUA"], ["AUG"], ["ACU", "ACC", "ACA", "ACG"], ["AAU", "AAC"], ["AAA", "AAG"], ["AGU", "AGC"], ["AGA", "AGG"], ["GUU", "GUC", "GUA", "GUG"], ["GCU", "GCC", "GCA", "GCG"], ["GAU", "GAC"], ["GAA", "GAG"], ["GGU", "GGC", "GGA", "GGG"]]
+protCD = (["UUU", "UUC"], ["UUA", "UUG"], ["UCU", "UCC", "UCA", "UCG"], ["UAU", "UAC"], ["UAA", "UAG"], ["UGU", "UGC"], ["UGA"], ["UGG"], ["CUU", "CUC", "CUA", "CUG"], ["CCU", "CCC", "CCA", "CCG"], ["CAU", "CAC"], ["CAA", "CAG"], ["CGU", "CGC", "CGA", "CGG"], ["AUU", "AUC", "AUA"], ["AUG"], ["ACU", "ACC", "ACA", "ACG"], ["AAU", "AAC"], ["AAA", "AAG"], ["AGU", "AGC"], ["AGA", "AGG"], ["GUU", "GUC", "GUA", "GUG"], ["GCU", "GCC", "GCA", "GCG"], ["GAU", "GAC"], ["GAA", "GAG"], ["GGU", "GGC", "GGA", "GGG"])
 protRS = ("Phe", "Leu", "Ser", "Tyr", "Alto", "Cys", "Alto", "Trp", "Leu", "Pro", "His", "Gln", "Arg", "Ile", "Met", "Thr", "Asn", "Lys", "Ser", "Arg", "Val", "Ala", "Asp", "Glu", "Gly")
 
 def corregir(texto):
@@ -67,7 +67,7 @@ def tipo(texto, darTipo="tipo"):
 
     texto = corregir(texto)
 
-    if texto.find("U") != -1 and texto.find("T") == -1:
+    if texto.find("U") != -1:
         if darTipo == "tipo":
             return "ARNm"
         elif darTipo == "ADN":
@@ -75,16 +75,13 @@ def tipo(texto, darTipo="tipo"):
         else:
             return texto
 
-    elif texto.find("U"):
+    else:
         if darTipo == "tipo":
             return "ADN"
         elif darTipo == "ARNm":
             return trans(texto)
         else:
             return texto
-
-    else:
-        return "Ninguno"
 
 def encontrarCodigo(texto):
     if texto in protRS:
@@ -120,6 +117,8 @@ def Datos(texto):
     print("\nProteinas correspondientes:", proteinList(texto))
     print("\n///////////////////////////////////////////\n")
     return ""
+
+
 
 def ayuda():
     print("Ver. 1.0.0"
