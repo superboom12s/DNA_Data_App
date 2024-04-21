@@ -1,6 +1,6 @@
 
 protCD = [["UUU", "UUC"], ["UUA", "UUG"], ["UCU", "UCC", "UCA", "UCG"], ["UAU", "UAC"], ["UAA", "UAG"], ["UGU", "UGC"], ["UGA"], ["UGG"], ["CUU", "CUC", "CUA", "CUG"], ["CCU", "CCC", "CCA", "CCG"], ["CAU", "CAC"], ["CAA", "CAG"], ["CGU", "CGC", "CGA", "CGG"], ["AUU", "AUC", "AUA"], ["AUG"], ["ACU", "ACC", "ACA", "ACG"], ["AAU", "AAC"], ["AAA", "AAG"], ["AGU", "AGC"], ["AGA", "AGG"], ["GUU", "GUC", "GUA", "GUG"], ["GCU", "GCC", "GCA", "GCG"], ["GAU", "GAC"], ["GAA", "GAG"], ["GGU", "GGC", "GGA", "GGG"]]
-protRS = ["Phe", "Leu", "Ser", "Tyr", "Alto", "Cys", "Alto", "Trp", "Leu", "Pro", "His", "Gln", "Arg", "Ile", "Met", "Thr", "Asn", "Lys", "Ser", "Arg", "Val", "Ala", "Asp", "Glu", "Gly"]
+protRS = ("Phe", "Leu", "Ser", "Tyr", "Alto", "Cys", "Alto", "Trp", "Leu", "Pro", "His", "Gln", "Arg", "Ile", "Met", "Thr", "Asn", "Lys", "Ser", "Arg", "Val", "Ala", "Asp", "Glu", "Gly")
 
 def corregir(texto):
     #elimina los espacios
@@ -144,3 +144,5 @@ def ayuda():
 
 def help():
     ayuda()
+
+print(proteinList("AAATTa"))
