@@ -143,5 +143,3 @@ def ayuda():
 
 def help():
     ayuda()
-
-print(proteinList("AAATTa"))
