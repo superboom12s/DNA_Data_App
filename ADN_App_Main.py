@@ -1,5 +1,5 @@
 
-protCD = (["UUU", "UUC"], ["UUA", "UUG"], ["UCU", "UCC", "UCA", "UCG"], ["UAU", "UAC"], ["UAA", "UAG"], ["UGU", "UGC"], ["UGA"], ["UGG"], ["CUU", "CUC", "CUA", "CUG"], ["CCU", "CCC", "CCA", "CCG"], ["CAU", "CAC"], ["CAA", "CAG"], ["CGU", "CGC", "CGA", "CGG"], ["AUU", "AUC", "AUA"], ["AUG"], ["ACU", "ACC", "ACA", "ACG"], ["AAU", "AAC"], ["AAA", "AAG"], ["AGU", "AGC"], ["AGA", "AGG"], ["GUU", "GUC", "GUA", "GUG"], ["GCU", "GCC", "GCA", "GCG"], ["GAU", "GAC"], ["GAA", "GAG"], ["GGU", "GGC", "GGA", "GGG"])
+protCD = ({"UUU", "UUC"}, {"UUA", "UUG"}, {"UCU", "UCC", "UCA", "UCG"}, {"UAU", "UAC"}, {"UAA", "UAG"}, {"UGU", "UGC"}, {"UGA"}, {"UGG"}, {"CUU", "CUC", "CUA", "CUG"}, {"CCU", "CCC", "CCA", "CCG"}, {"CAU", "CAC"}, {"CAA", "CAG"}, {"CGU", "CGC", "CGA", "CGG"}, {"AUU", "AUC", "AUA"}, {"AUG"}, {"ACU", "ACC", "ACA", "ACG"}, {"AAU", "AAC"}, {"AAA", "AAG"}, {"AGU", "AGC"}, {"AGA", "AGG"}, {"GUU", "GUC", "GUA", "GUG"}, {"GCU", "GCC", "GCA", "GCG"}, {"GAU", "GAC"}, {"GAA", "GAG"}, {"GGU", "GGC", "GGA", "GGG"})
 protRS = ("Phe", "Leu", "Ser", "Tyr", "Alto", "Cys", "Alto", "Trp", "Leu", "Pro", "His", "Gln", "Arg", "Ile", "Met", "Thr", "Asn", "Lys", "Ser", "Arg", "Val", "Ala", "Asp", "Glu", "Gly")
 
 
@@ -20,8 +20,8 @@ def trans(texto):
 
     texto = corregir(texto)
 
-    ADN1 = 'ATGC-UACG'
-    ADN2 = 'UACG-ATGC'
+    ADN1 = 'ATGC-U'
+    ADN2 = 'UACG-A'
 
     try:
         texto = texto.upper()
@@ -48,7 +48,6 @@ def encontrarProt(texto):
     for i in range(len(protRS)):
         if ARN_texto in protCD[i]:
             return protRS[i]
-            break
 
     return "Ninguna"
 
