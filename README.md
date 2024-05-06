@@ -1,10 +1,10 @@
 # DNA Data App
-## Ver. 1.0.0
+## Ver. 1.1.1
 
 > [!IMPORTANT]
 > ### This proyect is in spanish :es: for now but it will be translated to english soon.
 
-Esta aplicación trata de una _**libreria** con diferentes herramientas para manipular los datos de un código de **ADN** o **ARNm**_ y sus respectivas proteinas, puede pasar de un código a otro, mostrar las proteinas que contiene un código... estas son las funciones de la libreria:
+Esta aplicación trata de una _**libreria** con diferentes herramientas para manipular los datos de un código de **ADN** o **ARN**_ y sus respectivas proteinas, puede pasar de un código a otro, mostrar las proteinas que contiene un código... estas son las funciones de la libreria:
 
 
   - `trans(Codigo)` [^1]  
@@ -24,13 +24,13 @@ Esta aplicación trata de una _**libreria** con diferentes herramientas para man
 > [!TIP]
 > Puedes encontrar la documentación mostrada anteriormente usando `ayuda()` o `help()`.
 ‎ ‎ ‎ ‎
-[^1]: `trans(Codigo)` -> Si el valor introducido es _ADN_ lo transforma a _ARNm_ y viceversa.
-[^2]: `dividirEnTres(Codigo)` -> Divide en bloques un codigo de _ADN_ o _ARNm_. Devuelve una lista.
-[^3]: `encontrarProt(Codigo)` -> Encuentra **UNA** proteina de un bloque de codigo (se convierte a _ARNm_ de forma automatica).
-[^4]: `proteinList(Codigo)` -> Transforma una tira de _ADN_ (o varios _ARNm_ en una sola tira) en **todas** las proteinas que contiene esa informacion.
-[^5]: `tipo(Codigo, tipo[opcional])` -> Comprueba si el valor introducido es _ADN_ o _ARNm_. _En caso de tener una segunda entrada_ traduce el codigo en un tipo especifico indicado por la segunda entrada. Si no se puede determinar el tipo, devolvera _ADN_ por defecto.
+[^1]: `trans(Codigo)` -> Si el valor introducido es _ADN_ lo transforma a _ARN_ y viceversa.
+[^2]: `dividirEnTres(Codigo)` -> Divide en bloques un codigo de _ADN_ o _ARN_. Devuelve una lista.
+[^3]: `encontrarProt(Codigo)` -> Encuentra **UNA** proteina de un bloque de codigo (se convierte a _ARN_ de forma automatica).
+[^4]: `proteinList(Codigo)` -> Transforma una tira de _ADN_ (o varios _ARN_ en una sola tira) en **todas** las proteinas que contiene esa informacion.
+[^5]: `tipo(Codigo, tipo[opcional])` -> Comprueba si el valor introducido es _ADN_ o _ARN_. _En caso de tener una segunda entrada_ traduce el codigo en un tipo especifico indicado por la segunda entrada. Si no se puede determinar el tipo, devolvera _ADN_ por defecto.
 [^6]: `encontrarCodigo(Proteina)` -> **Indica el/los codigo(s)** necesario(s) para obtener una proteina especifica.
-[^7]: `codigoList(Proteinas, tipo[opcional])` -> Hace una lista del _ADN_ necesario para obtener unas proteinas especificas. El tipo (opcional), por defecto es _ADN_, aunque se puede seleccionar _ARNm_. En caso de ser ARNm, el resultado viene separado por espacios.
+[^7]: `codigoList(Proteinas, tipo[opcional])` -> Hace una lista del _ADN_ necesario para obtener unas proteinas especificas. El tipo (opcional), por defecto es _ADN_, aunque se puede seleccionar _ARN_. En caso de ser ARN, el resultado viene separado por espacios.
 [^8]: `Datos(Codigo)` -> Indica **todos los datos** de el codigo en la **terminal**.
 
 
