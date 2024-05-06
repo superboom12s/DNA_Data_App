@@ -1,5 +1,5 @@
 # DNA Data App
-## Ver. 1.1.1
+## Ver. 1.1.2
 
 > [!IMPORTANT]
 > ### This proyect is in spanish :es: for now but it will be translated to english soon.
