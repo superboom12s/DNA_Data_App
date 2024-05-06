@@ -154,5 +154,4 @@ def ayuda():
           "                                         resultado viene separado por espacios."
           "Datos(Codigo) -> indica todos los datos de el codigo en la terminal")
 
-def help():
-    ayuda()
+help = ayuda
