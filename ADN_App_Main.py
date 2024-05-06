@@ -120,6 +120,18 @@ def Datos(texto):
     return ""
 
 
+def Test():
+    import time
+    tiempoInicial = time.time()
+    print("trans() test: passed?:", trans("ATG")=="UAC", "expected output:", "UAC actual output:", trans("ATG"))
+    print("dividirEnTres() test: passed?:", dividirEnTres("AAAAAA")==["AAA", "AAA"], "expected output: [\"AAA\", \"AAA\"] actual output:", dividirEnTres("AAAAAA"))
+    print("encontrarProt() test: passed?:", encontrarProt("AAA")=="Lys", "expected output: Lys actual output:", encontrarProt("AAA"))
+    print("proteinList() test passed?:", proteinList("AAATTT")=="Phe Lys", "expected output: Phe, Lys actual output:", proteinList("AAATTT"))
+    print("tipo() test passed?:", tipo("uuu")=="ARN" and tipo("ttt")=="ADN", "expected output: ARN, ADN actual output:", tipo("uuu"), ",", tipo("ttt"))
+    print("encontrarCodigo() test passed?:", encontrarCodigo("Phe")=="AAA", "expected output: AAA actual output:", encontrarCodigo("Phe"))
+    print("codigoList() test passed?:", codigoList("Phe Lys")=="AAATTT", "expected output: AAATTT actual output:", codigoList("Phe Lys"))
+    print(time.time() - tiempoInicial)
+
 
 def ayuda():
     print("Ver. 1.0.0"
