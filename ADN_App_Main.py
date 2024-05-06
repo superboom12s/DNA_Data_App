@@ -53,7 +53,7 @@ def encontrarProt(texto):
 
 def proteinList(texto):
     texto = corregir(texto)
-    texto = tipo(texto, "ARNm")
+    texto = tipo(texto, "ARN")
 
     ARN_List = dividirEnTres(texto)
 
@@ -70,7 +70,7 @@ def tipo(texto, darTipo="tipo"):
 
     if texto.find("U") != -1:
         if darTipo == "tipo":
-            return "ARNm"
+            return "ARN"
         elif darTipo == "ADN":
             return trans(texto)
         else:
@@ -79,7 +79,7 @@ def tipo(texto, darTipo="tipo"):
     else:
         if darTipo == "tipo":
             return "ADN"
-        elif darTipo == "ARNm":
+        elif darTipo == "ARN":
             return trans(texto)
         else:
             return texto
@@ -104,7 +104,7 @@ def codigoList(texto, tipo="ADN"):
     for prot in codeList:
         codigos.append(encontrarCodigo(prot))
 
-    if tipo == "ARNm":
+    if tipo == "ARN":
         return ' '.join(codigos)
     else:
         return trans(''.join(codigos))
@@ -113,7 +113,7 @@ def Datos(texto):
     print("Tipo:", tipo(texto))
     print("---------------------------------------------")
     print("ADN: ", tipo(texto, "ADN"))
-    print("ARNm:", tipo(texto, "ARNm"))
+    print("ARN:", tipo(texto, "ARNm"))
     print("---------------------------------------------")
     print("\nProteinas correspondientes:", proteinList(texto))
     print("\n///////////////////////////////////////////\n")
